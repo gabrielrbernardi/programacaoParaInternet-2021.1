@@ -1,0 +1,46 @@
+*{
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #0f171e;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1vh;
+    text-align: center;
+}
+
+html{
+    padding: 10px;
+}
+
+.text1{
+    color: rgb(131, 0, 0);
+}
+
+.text2{
+    color: rgb(0, 111, 0);
+}
+
+.link:hover{
+    text-decoration: underline;
+}
+
+.image{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    border-radius: 10%;
+}
+
+table, th, td {
+    border:1px solid white;
+}
+
+table{
+    width: 100%;
+}
+
+form{
+    width: 15vw;
+}

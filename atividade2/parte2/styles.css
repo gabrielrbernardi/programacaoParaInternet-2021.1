@@ -1,0 +1,15 @@
+*{
+    font-family: Arial, sans-serif;
+    background-color: #0f171e;
+    color: #fff;
+    text-decoration: none;
+    margin-top: 1vh;
+}
+
+.image{
+    width: 2%;
+}
+
+.semMarcador{
+    list-style-type: none;
+}
