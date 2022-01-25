@@ -1,0 +1,90 @@
+function checkValues(){
+    //verifica nome
+    var nome = document.getElementById("completeName").value;
+    var qtdEspacos = nome.includes(" ");
+
+    //verifica sexo
+    var radios = document.getElementsByName("gender");
+    var choose;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            choose = radios[i].value;
+            break;
+        }
+    }
+    var statusSex;
+    if(!choose){
+        statusSex = null;
+    }else if(choose == "sexMas"){
+        statusSex = "Masculino";
+    }else if(choose == "sexFem"){
+        statusSex = "Feminino";
+    }
+    
+    //verifica dataNascimento
+    var dataNascimento = document.getElementById("birthDate").value;
+
+    //verifica CPF
+    var regExpCPF = /[a-zA-Z]/g;
+
+    var cpf = document.getElementById("CPF").value;
+    var statusCPF;
+    if(cpf.length != 11 || regExpCPF.test(cpf)){
+        statusCPF = false;
+    }else{
+        statusCPF = true;
+    }
+    
+    //verificaCEP    
+    var cep = document.getElementById("CEP").value;
+    var regExpCEP = /\d{5}-?\d{3}$/
+    var statusCEP;
+
+    if(regExpCEP.test(cep)){
+        statusCEP = true;
+    }else{
+        statusCEP = false;
+    }
+
+    if(qtdEspacos && statusSex && dataNascimento && statusCPF && statusCEP){
+        document.getElementById("relatorio").style.display = "inline";
+
+        document.getElementById("statusNome").innerHTML = `Nome Completo: ${nome}`;
+        document.getElementById("statusSexo").innerHTML = `Sexo: ${statusSex}`;
+        document.getElementById("statusNascimento").innerHTML = `Data de Nascimento: ${dataNascimento}`;
+        document.getElementById("statusCPF").innerHTML = `CPF: ${cpf}`;
+        document.getElementById("statusCEP").innerHTML = `CEP: ${cep}`;
+
+        document.getElementById("statusRelatorio").innerHTML = ``;
+    }else{
+        document.getElementById("statusRelatorio").innerHTML = `Houve erro no preenchimento de valores. Verifique e tente novamente!`;
+    }
+}
+
+function checkCEP(){
+    var cep = document.getElementById("CEP").value;
+    if(cep.length == 8){
+        let part = cep.substr(0, 5);
+        part += '-';
+        let part1 = cep.substr(5);
+        part += part1
+        document.getElementById("CEP").value = part;
+    }
+}
+
+function returnCEPData(){
+    var cep = document.getElementById("CEP").value;
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        var obj = JSON.parse(this.responseText);
+    
+        document.getElementById("dadosCidade").style.display = "inline";
+    
+        document.getElementById("logradouro").value = obj.logradouro;
+        document.getElementById("bairro").value = obj.bairro;
+        document.getElementById("localidade").value = obj.localidade;
+        document.getElementById("uf").value = obj.uf;
+    }
+    xhttp.open("GET", `https://viacep.com.br/ws/${cep}/json/`);
+    xhttp.send();
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML Old Style Formatting</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="container">
+        <div class="form">
+            <h3>DADOS DO TITULAR</h3>
+            <div class="field">
+                <p>Nome completo*</p>
+                <input class="input" id="completeName" type="text" autocomplete="off">
+            </div>
+            <div class="field">
+                <p>Sexo*</p>
+                <input type="radio" name="gender" id="sexMas" value="sexMas" autocomplete="off"><label class="color_link capitalize" for="sexMas">Masculino</label>
+                <input type="radio" name="gender" id="sexFem" value="sexFem" autocomplete="off"><label class="color_link capitalize" for="sexFem">Feminino</label>
+            </div>
+            <div class="field">
+                <p>Data de nascimento*</p>
+                <input class="input" id="birthDate" type="date" autocomplete="off">
+            </div>
+            <div class="field">
+                <p>CPF*</p>
+                <input class="input" id="CPF" type="" autocomplete="off">
+            </div>
+            <div class="field">
+                <p>CEP*</p>
+                <input class="input" maxlength="8" id="CEP" pattern="\d{5}-?\d{3}" type="text" autocomplete="off" onkeyup="checkCEP()">
+            </div>
+
+            <div id="dadosCidade">
+                <div class="field">
+                    <p>Logradouro</p>
+                    <input class="input" id="logradouro" disabled>
+                </div>
+                <div class="field">
+                    <p>Bairro</p>
+                    <input class="input" id="bairro" disabled>
+                </div>
+                <div class="field">
+                    <p>Cidade</p>
+                    <input class="input" id="localidade" disabled>
+                </div>
+                <div class="field">
+                    <p>UF</p>
+                    <input class="input" id="uf" disabled>
+                </div>
+                <a id="demo"></a>
+            </div>
+
+            <div id="relatorio">
+                <a id="statusNome"></a>
+                <br>
+                <a id="statusSexo"></a>
+                <br>
+                <a id="statusNascimento"></a>
+                <br>
+                <a id="statusCPF"></a>
+                <br>
+                <a id="statusCEP"></a>
+            </div>
+            <a id="statusRelatorio"></a>
+            <button type="button" onclick="returnCEPData()">Pesquisar CEP</button>
+            <button type="submit" onclick="checkValues()">Verifica campos</button>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html> 

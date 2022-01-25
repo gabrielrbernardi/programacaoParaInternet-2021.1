@@ -1,0 +1,15 @@
+Nome: Gabriel Ribeiro Bernardi
+Matricula: 11821BCC036
+
+Questao 8
+a resposta retornada foi '"student"'
+
+Questao 9
+foi retornado um erro, pois nao existe a rota "/add"
+
+Questao 13
+a resposta retornada foi:
+	CDomainClass [disciplina=ss, professor=s, codDisciplina=1]
+
+Questao 14
+Houve um erro, pois para a rota "/addDomainObject" é necessário que os parametros "disciplina", "professor" e "codDisciplina" sejam passados, o que não acontece.
