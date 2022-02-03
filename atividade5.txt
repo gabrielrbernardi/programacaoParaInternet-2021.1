@@ -1,0 +1,14 @@
+Questão 13
+O resultado obtido foi de criação do usuário passado na url.
+
+Questão 14
+A aplicação retorna um erro, pois para a ação solicitada não existe tarefa.
+
+Questão 19
+Foi digitado alguns valores no input e criou-se os valores. Posteriormente, foi verificado se os valores constavam no banco de dados e a resposta foi afirmativa.
+
+Questão 20
+Houve um erro após clicar no botão "Add User". O erro ocorre pois quando é chamado a rota pelo form, a função no backend espera alguns parâmetros e os mesmos não são passados pelo form.
+
+Questão 22
+O resultado obtido foi um json que possui os objetos que acabaram de ser criados pelo form.
