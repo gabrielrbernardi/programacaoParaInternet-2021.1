@@ -1,7 +1,10 @@
 package com.example.atividade5;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,10 +33,12 @@ public class LabController {
 	}
 	
 	@GetMapping(path="/addDomainObject")
-	public @ResponseBody String addDomainObject (@RequestParam String pedido, @RequestParam String produto) {
+	public @ResponseBody String addDomainObject (@RequestParam String produto, @RequestParam String telefone, @RequestParam String data, @RequestParam int quantidade) {
 		CDomainClass cdc = new CDomainClass();
-		cdc.setPedido(pedido);
+		cdc.setData(data);
 		cdc.setProduto(produto);
+		cdc.setQuantidade(quantidade);
+		cdc.setTelefone(telefone);
 		cDomainClassRepository.save(cdc);
 		return "Order Saved";
 	}
@@ -41,5 +46,21 @@ public class LabController {
 	@GetMapping(path="/allCDomainClass")
 	public @ResponseBody Iterable<CDomainClass> chamadogetAllCDomainClass(){
 		return cDomainClassRepository.findAll();
-	}	
+	}
+	
+	@GetMapping(path="/addValid") 
+	public String addValid (@Valid User user, BindingResult bindingResult) { 
+		if (bindingResult.hasErrors()){   
+			return"form"; 
+		}
+		return"result";
+	}
+	
+	@GetMapping(path="/addValidDomainObject") 
+	public String addValidDomainObject (@Valid CDomainClass cdc, BindingResult bindingResult) { 
+		if (bindingResult.hasErrors()){   
+			return"form2"; 
+		}
+		return"result2";
+	}
 }

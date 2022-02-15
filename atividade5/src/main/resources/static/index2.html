@@ -4,16 +4,25 @@
 	<title>LAB05/BCC/FACOM/UFU - Index</title>
 </head> 
 <body> 
-	<form action="/lab5/addDomainObject" method="GET" id="nameForm">
+	<h2>Add Fields With Validation</h2>
+	<form action="/lab5/addValidDomainObject" method="GET" id="nameForm">
 		<div>
-			<label for="pedidoField">pedido</label>
-			</br>
-			<input name="pedido" id="pedidoField">
-			</br>
-			<label for="produtoField">produto</label>
+			<label for="produtoField">Produto</label>
 			</br>
 			<input name="produto" id="produtoField">
-			<button>Add Order</button>
+			</br>
+			<label for="foneField">Telefone</label>
+			</br>
+			<input name="telefone" id="foneField">
+			</br>
+			<label for="qtdField">Quantidade</label>
+			</br>
+			<input name="quantidade" type="number" id="qtdField">
+			</br>
+			<label for="dataField">Data</label>
+			</br>
+			<input name="data" id="dataField">
+			<button>Submit</button>
 		</div>
 	</form>
 </body> 

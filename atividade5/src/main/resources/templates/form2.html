@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<!--<html xmlns:th="http://www.thymeleaf.org"> -->
+<html xmlns="http://www.w3.org/1999/xhtml" 
+    xmlns:th="http://www.thymeleaf.org" 
+    xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<body>
+    <h2>Add Fields With Validation</h2>
+    <form action="#" th:action="@{/lab5/addValidDomainObject}" th:object="${cdc}" method="get">
+        <table>
+            <tr>
+                <td>produto:</td>
+                <td><input type="text" th:field="*{produto}" /></td>
+                <td th:if="${#fields.hasErrors('produto')}" th:errors="*{produto}">produto Error</td>
+            </tr>
+            <tr>
+                <td>telefone:</td>
+                <td><input type="text" th:field="*{telefone}" /></td>
+                <td th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}">telefone Error</td>
+            </tr>
+            <tr>
+                <td>quantidade:</td>
+                <td><input type="text" th:field="*{quantidade}" /></td>
+                <td th:if="${#fields.hasErrors('quantidade')}" th:errors="*{quantidade}">telefone Error</td>
+            </tr>
+            <tr>
+                <td>data:</td>
+                <td><input type="text" th:field="*{data}" /></td>
+                <td th:if="${#fields.hasErrors('data')}" th:errors="*{data}">data Error</td>
+            </tr>
+            <tr>
+                <td><button type="submit">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,3 @@
+Questão 16)
+Para o parâmetro que seria criado utilizando o MaskFormatter, foi utilizado o @Pattern, com um tratamento simples, somente para aceitar valores numéricos.
+Os demais formulários, a validação está ocorrendo conforme esperado.
