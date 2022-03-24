@@ -1,0 +1,3 @@
+Questão 09)
+Ao fechar o navegador, é criado um novo Session ID e portanto, as informações guardadas na sessão anterior não poderão ser acessadas na nova sessão.
+
